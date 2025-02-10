@@ -1,0 +1,111 @@
+Here are the SQL commands for both parts (A and B):
+
+
+---
+
+A. College Database
+
+1. Create a database
+
+CREATE DATABASE College;
+
+2. Select the current database
+
+USE College;
+
+3. Create tables
+
+CREATE TABLE Student (
+    roll_no INTEGER PRIMARY KEY,
+    name VARCHAR(100),
+    dob DATE,
+    address TEXT,
+    phone_no VARCHAR(15),
+    blood_grp VARCHAR(5)
+);
+
+CREATE TABLE Course (
+    Course_id INTEGER PRIMARY KEY,
+    Course_name VARCHAR(100),
+    course_duration INTEGER
+);
+
+4. List all tables in the current database
+
+SHOW TABLES;
+
+5. Display the structure of the Student table
+
+DESC Student;
+
+6. Drop the column blood_grp from Student table
+
+ALTER TABLE Student DROP COLUMN blood_grp;
+
+7. Add a new column Adar_no (Aadhaar number) to Student table
+
+ALTER TABLE Student ADD COLUMN Adar_no BIGINT;
+
+8. Change the datatype of phone_no from VARCHAR to INT
+
+ALTER TABLE Student MODIFY COLUMN phone_no INT;
+
+9. Drop the tables
+
+DROP TABLE Student;
+DROP TABLE Course;
+
+10. Delete the database
+
+DROP DATABASE College;
+
+
+---
+
+B. Organization Database
+
+1. Create a database
+
+CREATE DATABASE Organization;
+
+2. Select the current database
+
+USE Organization;
+
+3. Create tables
+
+CREATE TABLE Employee (
+    emp_no VARCHAR(10) PRIMARY KEY,
+    emp_name VARCHAR(100),
+    dob DATE,
+    address TEXT,
+    mobile_no INTEGER,
+    dept_no VARCHAR(10),
+    salary INTEGER
+);
+
+CREATE TABLE Department (
+    dept_no VARCHAR(10) PRIMARY KEY,
+    dept_name VARCHAR(100),
+    location VARCHAR(100)
+);
+
+4. List all tables in the current database
+
+SHOW TABLES;
+
+5. Display the structure of Employee and Department tables
+
+DESC Employee;
+DESC Department;
+
+6. Add a new column Designation to the Employee table
+
+ALTER TABLE Employee ADD COLUMN Designation VARCHAR(50);
+
+7. Drop the column location from Department table
+
+ALTER TABLE Department DROP COLUMN location;
+
+These commands will successfully implement the requested operations for both databases. Let me know if you need any modifications!
+
