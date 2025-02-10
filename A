@@ -1,0 +1,71 @@
+Here are the SQL commands to implement your requirements:
+
+
+---
+
+1. Create the Persons table
+
+CREATE TABLE Persons (
+    PersonID INTEGER PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Aadhar BIGINT NOT NULL UNIQUE,
+    Age INTEGER CHECK (Age > 18)
+);
+
+
+---
+
+2. Create the Orders table with a foreign key referencing Persons table
+
+CREATE TABLE Orders (
+    OrderID INTEGER PRIMARY KEY,
+    OrderNumber INTEGER NOT NULL,
+    PersonID INTEGER,
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+
+---
+
+3. Display the structure of Persons table
+
+DESC Persons;
+
+
+---
+
+4. Display the structure of Orders table
+
+DESC Orders;
+
+
+---
+
+5. Add emp_no as the primary key of the Employee table
+
+ALTER TABLE Employee ADD PRIMARY KEY (emp_no);
+
+
+---
+
+6. Add dept_no as the primary key of the Department table
+
+ALTER TABLE Department ADD PRIMARY KEY (dept_no);
+
+
+---
+
+7. Add dept_no in Employee table as a foreign key referencing Department table with ON DELETE CASCADE
+
+ALTER TABLE Employee ADD CONSTRAINT fk_dept
+FOREIGN KEY (dept_no) REFERENCES Department(dept_no) ON DELETE CASCADE;
+
+
+---
+
+8. Drop the primary key of the Orders table
+
+ALTER TABLE Orders DROP PRIMARY KEY;
+
+These commands will successfully implement the requested operations. Let me know if you need any modifications!
+
